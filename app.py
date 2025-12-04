@@ -1,13 +1,14 @@
-from flask import Flask
-from datetime import timedelta
-
+from os import name
+from flask import Flask, render_template # type: ignore
+from helpers import get_news
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'news'
-app.config['SESSION_TYPE'] = 'filesystem'
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1) # session only store for 1 day 
-app.config['DEBUG'] = True
+app.secret_key = "TheNews"
 
+@app.route("/")
+def index():
+    response = get_news()
+    return render_template("index.html", json = response)
 
 
 if __name__=="__main__":
