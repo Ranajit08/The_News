@@ -1,13 +1,14 @@
 from flask import Flask
-from urls import news_bp
-from admin import admin_bp
+from datetime import timedelta
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'news'
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1) # session only store for 1 day 
+app.config['DEBUG'] = True
 
-app.register_blueprint(news_bp)
-app.register_blueprint(admin_bp)
+
 
 if __name__=="__main__":
     app.run(debug=True)
