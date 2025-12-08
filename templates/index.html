@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The News</title>
-</head>
-<body>
-    <script src="{{ url_for('static', filename='index.js')}}"></script>
-    <div id="container">
-        {% for page in json %}
-            <div id="card">
-                <h1>{{ page.title }}</h1>
-                <h2>{{ page.description }}</h2>
-                <p>Author: {{ page.author }}</p>
-                <img src="{{ page.urlToImage }}" alt="{{ page.source.name }}">
-                <p>{{ page.content[:-13]| safe }} <span> <a href="{{ page.url }}">See more</a></span></p>
-            </div>
-        {% endfor %}
-    </div>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block main %}
+        <div id="container">
+            {% for page in json %}
+                <div id="card">
+                    <h2>{{ page.title }}</h2>
+                    <h5>{{ page.description }}</h5>
+                    <p>Author: {{ page.author }}</p>
+                    {% if page.urlToImage and page.source.name %}
+                        <img src="{{ page.urlToImage }}" alt="{{ page.source.name }}">
+                    {% endif %}
+                    <a href="{{ page.url }}" class="btn btn-primary">Read Article</a></p>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
