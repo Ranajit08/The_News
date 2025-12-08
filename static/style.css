@@ -1,0 +1,105 @@
+#container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    width: 1000px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+#about{
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: rgb(244,242,199);
+    height: auto;
+    width: auto;
+    padding: 20px;
+}
+
+header > nav {
+    background-color: rgb(240,226,142);
+}
+
+header > h1{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-left: 575px;
+    padding-right: 575px;
+    color: black;
+    font-weight: bold;
+}
+
+nav > form > button{
+    margin-left: 10px;
+}
+
+nav > div{
+    margin-left: 80px;
+}
+
+nav > div > a{
+    padding-left: 30px;
+}
+
+nav > form{
+    height: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 200px;
+    margin-right: 80px;
+}
+
+body{
+    background-color:  rgb(206,206,206);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Monospace;
+}
+
+#card{
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(244,242,199);
+}
+
+#card > img{
+    height: 230px;
+    width: 710px;
+}
+
+#card > h2 {
+    color: rgb(119,164,206);
+}
+
+header{
+    background-color: rgb(144,185,255);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.btn{
+    margin-top: 10px;
+}
+
+footer{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
